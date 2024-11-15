@@ -1,4 +1,4 @@
-# Projeto Clonado: [Nome do Projeto Original]
+# Projeto Clonado: Netflix-clone
 
 Este repositório é um fork do projeto original disponível em [[link para o repositório original]](https://github.com/leovargasdev/netflix-clone). Foi clonado e modificado com o objetivo de atender aos requisitos de um trabalho acadêmico da minha pós-graduação.
 
