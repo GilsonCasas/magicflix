@@ -1,3 +1,33 @@
+# Projeto Clonado: [Nome do Projeto Original]
+
+Este repositório é um fork do projeto original disponível em [[link para o repositório original]](https://github.com/leovargasdev/netflix-clone). Foi clonado e modificado com o objetivo de atender aos requisitos de um trabalho acadêmico da minha pós-graduação.
+
+## Objetivo
+O objetivo deste projeto é implementar uma nova funcionalidade sem alterar o comportamento existente do código original. 
+
+## Licença
+Este projeto segue a licença **GNU General Public License (GPL) v3**, assim como o repositório original. Você pode encontrar mais informações sobre a licença no arquivo [LICENSE](LICENSE).
+
+## Alterações Feitas
+As seguintes mudanças foram implementadas:
+- Criado um nova funcionalidade para fazer recomendações como teste de um MVP 
+
+Todas as modificações estão claramente marcadas no código com comentários que indicam autoria e data.
+
+## Informações Importantes
+- O repositório original está disponível em [[link do projeto original]](https://github.com/leovargasdev/netflix-clone).
+- Este repositório é para fins exclusivamente acadêmicos e não pretende substituir ou competir com o repositório original.
+
+## Contato
+Em caso de dúvidas, entre em contato:
+- Nome: Gilson Casas  
+- E-mail: gilson.casas@hotmail.com
+- Instituição: FIAP
+
+
+
+
+
 <p align="center">
   <img alt="NetflixClone" title="NetflixClone" src=".github/logo.svg" width="400px" />
 </p>
