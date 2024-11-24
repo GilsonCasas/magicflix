@@ -13,7 +13,6 @@ import {
 } from "@mui/material";
 
 import { IoMdClose } from 'react-icons/io';
-import recommendations from "../../components/MagicModal/recommendations.json";
 
 // Importando as imagens
 import magicflixLogo from "../../assets/magicflix.png";
@@ -23,7 +22,6 @@ import irritadoIcon from "../../assets/irritado.png";
 import ansiosoIcon from "../../assets/ansioso.png";
 import nabadIcon from "../../assets/nabad.png";
 import comtedioIcon from "../../assets/comtedio.png";
-import { Template } from "webpack";
 
 interface MagicModalProps {
   open: boolean;
