@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { FaPlay, FaInfoCircle } from 'react-icons/fa';
 

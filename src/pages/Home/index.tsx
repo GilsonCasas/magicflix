@@ -1,4 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 
 import NavBar from '../../components/NavBar';
@@ -30,6 +30,7 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const apiRoutes: { name: string; route: string }[] = [
+    { name: 'MagicFlix - Suas novas sugestões', route: '/tv/popular?' },
     { name: 'Em alta', route: '/tv/popular?' },
     { name: 'Populares na Cloneflix', route: '/trending/all/week?' },
     { name: 'Melhores Avaliados', route: '/movie/top_rated?' },

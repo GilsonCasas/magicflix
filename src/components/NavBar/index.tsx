@@ -1,7 +1,9 @@
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import { FaSearch, FaBell, FaGift, FaCaretDown, FaBiohazard } from 'react-icons/fa';
 import MagicModal from '../MagicModal';
-import LogoNetflix from '../../assets/logo.png';
+import magicflixLogo1 from '../../assets/magicflix_no_bg.png';
+import magicFlixM from "../../assets/M.png";
 
 import { Container, RoutesMenu, Profile } from './styles';
 
@@ -24,7 +26,19 @@ const NavBar: React.FC = () => {
   return (
     <Container isBlack={isBlack}>
       <RoutesMenu>
-        <img src={LogoNetflix} alt="Netflix Logo" />
+      <img
+        src={magicflixLogo1}
+        alt="Logo Magic Flix"
+        style={{
+          height: "70px",
+          width: "auto",
+          objectFit: "contain",
+          marginRight: "10px",
+          backgroundColor: "#11ffee00",
+          marginLeft: "-15px",
+          mixBlendMode: "lighten"          
+        }}
+      />
         <ul>
           <li style={{ fontWeight: 'bold' }}>Inicio</li>
           <li>Series</li>
@@ -34,14 +48,25 @@ const NavBar: React.FC = () => {
         </ul>
       </RoutesMenu>
       <Profile>
-        <FaBiohazard onClick={handleOpenModal} style={{ cursor: 'pointer' }} />
+        <img
+          src={magicFlixM}
+          alt="Magic Flix M"
+          onClick={handleOpenModal}
+          style={{ 
+            cursor: 'pointer', 
+            height: '24px', width: '24px', 
+            objectFit: "contain",
+            backgroundColor: 'transparent',
+            marginLeft: "15px",
+            marginRight: "20px"}}
+        />
         <FaSearch />
         <FaGift />
         <FaBell />
         <button type="button">
           <img
-            src="https://occ-0-761-185.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABR8DzEDMx6x6rgkSexM2EYh44oQISc8fyEFr6WnraR9_HyniHFDRbXRrElpLThfL9OYFOueAItK7VIEb2xH7AqA.png?r=c71"
-            alt="imagem profile usuario"
+        src="https://occ-0-761-185.1.nflxso.net/dnm/api/v6/Z-WHgqd_TeJxSuha8aZ5WpyLcX8/AAAABR8DzEDMx6x6rgkSexM2EYh44oQISc8fyEFr6WnraR9_HyniHFDRbXRrElpLThfL9OYFOueAItK7VIEb2xH7AqA.png?r=c71"
+        alt="imagem profile usuario"
           />
           <FaCaretDown />
         </button>
