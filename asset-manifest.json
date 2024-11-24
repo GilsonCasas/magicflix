@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/https://github.com/GilsonCasas/magicflix/static/js/main.621febd7.js",
-    "static/media/magicflix_no_bg.png": "/https://github.com/GilsonCasas/magicflix/static/media/magicflix_no_bg.3070ea5db3e08b835b4e.png",
-    "static/media/magicflix.png": "/https://github.com/GilsonCasas/magicflix/static/media/magicflix.01033531db1a1ca7e790.png",
-    "static/media/deboa.png": "/https://github.com/GilsonCasas/magicflix/static/media/deboa.403a1eb958c7409ebd37.png",
-    "static/media/M.png": "/https://github.com/GilsonCasas/magicflix/static/media/M.9d4235fdb6a2786f9008.png",
-    "static/media/comtedio.png": "/https://github.com/GilsonCasas/magicflix/static/media/comtedio.4699d53626ea8b3964ab.png",
-    "static/media/irritado.png": "/https://github.com/GilsonCasas/magicflix/static/media/irritado.b67e185219b43d480028.png",
-    "static/media/animado.png": "/https://github.com/GilsonCasas/magicflix/static/media/animado.39f62df18b54a3d80669.png",
-    "static/media/nabad.png": "/https://github.com/GilsonCasas/magicflix/static/media/nabad.bbe006a3a1c6d8a39be1.png",
-    "static/media/ansioso.png": "/https://github.com/GilsonCasas/magicflix/static/media/ansioso.4d1c69b7c0779bd56595.png",
-    "index.html": "/https://github.com/GilsonCasas/magicflix/index.html",
-    "main.621febd7.js.map": "/https://github.com/GilsonCasas/magicflix/static/js/main.621febd7.js.map"
+    "main.js": "/megicflix/static/js/main.c3d340c3.js",
+    "static/media/magicflix_no_bg.png": "/megicflix/static/media/magicflix_no_bg.3070ea5db3e08b835b4e.png",
+    "static/media/magicflix.png": "/megicflix/static/media/magicflix.01033531db1a1ca7e790.png",
+    "static/media/deboa.png": "/megicflix/static/media/deboa.403a1eb958c7409ebd37.png",
+    "static/media/M.png": "/megicflix/static/media/M.9d4235fdb6a2786f9008.png",
+    "static/media/comtedio.png": "/megicflix/static/media/comtedio.4699d53626ea8b3964ab.png",
+    "static/media/irritado.png": "/megicflix/static/media/irritado.b67e185219b43d480028.png",
+    "static/media/animado.png": "/megicflix/static/media/animado.39f62df18b54a3d80669.png",
+    "static/media/nabad.png": "/megicflix/static/media/nabad.bbe006a3a1c6d8a39be1.png",
+    "static/media/ansioso.png": "/megicflix/static/media/ansioso.4d1c69b7c0779bd56595.png",
+    "index.html": "/megicflix/index.html",
+    "main.c3d340c3.js.map": "/megicflix/static/js/main.c3d340c3.js.map"
   },
   "entrypoints": [
-    "static/js/main.621febd7.js"
+    "static/js/main.c3d340c3.js"
   ]
 }
