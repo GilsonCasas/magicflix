@@ -327,16 +327,20 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
                             width: isMobile ? '100%' : '200px',
                             height: "70px",
                             padding: "8px",
-                            border: "2px solid transparent",
+                            border: isMobile ? "transparent" : "2px solid transparent",
                             borderRadius: "8px",
-                            transition: "all 0.3s ease",
+                            transition: "all 0.4s ease",
                             marginTop: "10px",
                             backgroundColor: selectedOptions.sentimento === option.value ? "#333333" : "#181818",
                             borderColor: selectedOptions.sentimento === option.value ? "#e50914" : "#ffffff33",
                             "&:hover": {
                               borderColor: "#e50914",
                             },
+                            "&:focus": {
+                              borderColor: "#e50914",
+                            },                        
                           }}
+                          tabIndex={0} // Torna o Box focável
                         >
                           <img
                             src={option.icon}
