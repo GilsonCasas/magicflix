@@ -10,6 +10,8 @@ import {
   Radio,
   Button,
   Grid,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 
 import { IoMdClose } from 'react-icons/io';
@@ -31,6 +33,9 @@ interface MagicModalProps {
 const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
   const [step, setStep] = useState(1);
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleOptionSelect = (stepKey: string, value: string) => {
     setSelectedOptions((prev) => ({ ...prev, [stepKey]: value }));
@@ -189,6 +194,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
                 fontSize: "1.8rem",
                 color: "#ffffff",
                 marginBottom: "16px",
+                textAlign: isMobile ? 'center' : 'left'
               }}
             >
               Bem-vindo ao MagicFlix! 🎉
@@ -199,6 +205,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
                 fontSize: "1rem",
                 color: "#b3b3b3",
                 marginBottom: "12px",
+                textAlign: isMobile ? 'center' : 'left'
               }}
             >
               Agora, escolher o que assistir ficou mais fácil e divertido. Com o
@@ -212,6 +219,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
               sx={{
                 backgroundColor: "#e50914",
                 "&:hover": { backgroundColor: "#b00610" },
+                width: isMobile ? '100%' : 'auto'
               }}
             >
               Continuar
@@ -226,7 +234,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
               variant="h6"
               fontWeight="bold"
               gutterBottom
-              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px" }}
+              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px", textAlign: isMobile ? 'center' : 'left' }}
             >
               Quanto tempo você tem para assistir agora?
             </Typography>
@@ -268,70 +276,87 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
               variant="h6"
               fontWeight="bold"
               gutterBottom
-              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px" }}
+              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px", textAlign: isMobile ? 'center' : 'left' }}
             >
               Como você está se sentindo no momento?
             </Typography>
-            <RadioGroup
-              value={selectedOptions.sentimento}
-              onChange={(e) => handleOptionSelect('sentimento', e.target.value)}
+            <Box
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
+                maxHeight: "60vh",
+                overflowY: "auto",
+                paddingRight: "10px",
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#e50914",
+                  borderRadius: "8px",
+                },
               }}
             >
-              <Grid container spacing={2} justifyContent="space-between" alignItems="center" sx={{ margin: 0, maxWidth: "100%" }}>
-                {[
-                  { value: "Animado", label: "Animado", icon: animadoIcon },
-                  { value: "De boa", label: "De Boa", icon: deboaIcon },
-                  { value: "Irritado", label: "Irritado", icon: irritadoIcon },
-                  { value: "Ansioso", label: "Ansioso", icon: ansiosoIcon },
-                  { value: "Na bad", label: "Na bad", icon: nabadIcon },
-                  { value: "Com tédio", label: "Com tédio", icon: comtedioIcon },
-                ].map((option) => (
-                  <FormControlLabel
-                    value={option.value}
-                    sx={{ margin: 0 }}
-                    control={<Radio sx={{ display: "none" }} />}
-                    label={
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "flex-start",
-                          width: "200px",
-                          height: "70px",
-                          padding: "8px",
-                          border: "2px solid transparent",
-                          borderRadius: "8px",
-                          transition: "all 0.3s ease",
-                          marginTop: "10px",
-                          backgroundColor: selectedOptions.sentimento === option.value ? "#333333" : "#181818",
-                          borderColor: selectedOptions.sentimento === option.value ? "#e50914" : "#ffffff33",
-                          "&:hover": {
-                            borderColor: "#e50914",
-                          },
-                        }}
-                      >
-                        <img
-                          src={option.icon}
-                          alt={option.label}
-                          style={{
-                            width: "32px",
-                            height: "32px",
-                            objectFit: "contain",
+              <RadioGroup
+                value={selectedOptions.sentimento}
+                onChange={(e) => handleOptionSelect('sentimento', e.target.value)}
+                sx={{
+                  display: "flex",
+                  flexDirection: isMobile ? "row" : "column",
+                  gap: "8px",
+                  flexWrap: isMobile ? "wrap" : "nowrap",
+                  justifyContent: isMobile ? "space-between" : "flex-start",
+                }}
+              >
+                <Grid container spacing={2} justifyContent="space-between" alignItems="center" sx={{ margin: 0, maxWidth: "100%" }}>
+                  {[
+                    { value: "Animado", label: "Animado", icon: animadoIcon },
+                    { value: "De boa", label: "De Boa", icon: deboaIcon },
+                    { value: "Irritado", label: "Irritado", icon: irritadoIcon },
+                    { value: "Ansioso", label: "Ansioso", icon: ansiosoIcon },
+                    { value: "Na bad", label: "Na bad", icon: nabadIcon },
+                    { value: "Com tédio", label: "Com tédio", icon: comtedioIcon },
+                  ].map((option) => (
+                    <FormControlLabel
+                      value={option.value}
+                      sx={{ margin: 0, width: isMobile ? '48%' : 'auto' }}
+                      control={<Radio sx={{ display: "none" }} />}
+                      label={
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "flex-start",
+                            width: isMobile ? '100%' : '200px',
+                            height: "70px",
+                            padding: "8px",
+                            border: "2px solid transparent",
+                            borderRadius: "8px",
+                            transition: "all 0.3s ease",
+                            marginTop: "10px",
+                            backgroundColor: selectedOptions.sentimento === option.value ? "#333333" : "#181818",
+                            borderColor: selectedOptions.sentimento === option.value ? "#e50914" : "#ffffff33",
+                            "&:hover": {
+                              borderColor: "#e50914",
+                            },
                           }}
-                        />
-                        <Typography sx={{ color: "#ffffff", marginLeft: "12px" }}>
-                          {option.label}
-                        </Typography>
-                      </Box>
-                    }
-                  />
-                ))}
-              </Grid>
-            </RadioGroup>
+                        >
+                          <img
+                            src={option.icon}
+                            alt={option.label}
+                            style={{
+                              width: "32px",
+                              height: "32px",
+                              objectFit: "contain",
+                            }}
+                          />
+                          <Typography sx={{ color: "#ffffff", marginLeft: "12px" }}>
+                            {option.label}
+                          </Typography>
+                        </Box>
+                      }
+                    />
+                  ))}
+                </Grid>
+              </RadioGroup>
+            </Box>
           </>
         );
       case 4:
@@ -342,7 +367,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
               variant="h6"
               fontWeight="bold"
               gutterBottom
-              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px" }}
+              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px", textAlign: isMobile ? 'center' : 'left' }}
             >
               Está mais no clima de algo leve ou de algo que exija total atenção?
             </Typography>
@@ -376,72 +401,88 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
             </RadioGroup>
           </>
         );
-        case 5:
-   return (
-      <>
-        {getHeader()}
-        <Typography
-          variant="h6"
-          fontWeight="bold"
-          gutterBottom
-          sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px" }}
-        >
-          Recomendações para você:
-        </Typography>
-        {tmdbRecommendations.length > 0 ? (
-          <Grid container spacing={2}>
-            {tmdbRecommendations.slice(0, 3).map((movie, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Box sx={{ textAlign: "center" }}>
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://via.placeholder.com/500x750?text=Imagem+n%C3%A3o+dispon%C3%ADvel';
-                    }}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      borderRadius: "8px",
-                      marginBottom: "8px",
-                    }}
-                  />
-                  <Typography variant="h6" sx={{ color: "#ffffff" }}>
-                    {movie.title}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "#b3b3b3" }}>
-                    {movie.overview.length > 100
-                      ? `${movie.overview.substring(0, 100)}...`
-                      : movie.overview}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: "#b3b3b3", marginTop: "8px" }}>
-                    Duração: {movie.runtime ? `${movie.runtime} minutos` : 'Duração não disponível'}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-        ) : (
-          <Typography sx={{ color: "#b3b3b3" }}>
-            Nenhuma recomendação encontrada para suas escolhas.
-          </Typography>
-        )}
-        <Button
-          variant="contained"
-          onClick={resetAndClose}
-          sx={{
-            marginTop: "16px",
-            backgroundColor: "#e50914",
-            "&:hover": { backgroundColor: "#b00610" },
-          }}
-        >
-          Fechar
-        </Button>
-      </>
-    );
-  default:
-    return null;
-};
+      case 5:
+        return (
+          <>
+            {getHeader()}
+            <Typography
+              variant="h6"
+              fontWeight="bold"
+              gutterBottom
+              sx={{ fontSize: "1.5rem", color: "#ffffff", marginBottom: "16px", textAlign: isMobile ? 'center' : 'left' }}
+            >
+              Recomendações para você:
+            </Typography>
+            <Box
+              sx={{
+                maxHeight: "60vh",
+                overflowY: "auto",
+                paddingRight: "10px",
+                "&::-webkit-scrollbar": {
+                  width: "8px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#e50914",
+                  borderRadius: "8px",
+                },
+              }}
+            >
+              {tmdbRecommendations.length > 0 ? (
+                <Grid container spacing={2}>
+                  {tmdbRecommendations.map((movie, index) => (
+                    <Grid item xs={12} md={4} key={index}>
+                      <Box sx={{ textAlign: "center" }}>
+                        <img
+                          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                          alt={movie.title}
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://via.placeholder.com/500x750?text=Imagem+n%C3%A3o+dispon%C3%ADvel';
+                          }}
+                          style={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: "8px",
+                            marginBottom: "8px",
+                          }}
+                        />
+                        <Typography variant="h6" sx={{ color: "#ffffff" }}>
+                          {movie.title}
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "#b3b3b3" }}>
+                          {movie.overview.length > 100
+                            ? `${movie.overview.substring(0, 100)}...`
+                            : movie.overview}
+                        </Typography>
+                        <Typography variant="body2" sx={{ color: "#b3b3b3", marginTop: "8px" }}>
+                          Duração: {movie.runtime ? `${movie.runtime} minutos` : 'Duração não disponível'}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              ) : (
+                <Typography sx={{ color: "#b3b3b3" }}>
+                  Nenhuma recomendação encontrada para suas escolhas.
+                </Typography>
+              )}
+            </Box>
+            <Button
+              variant="contained"
+              onClick={resetAndClose}
+              sx={{
+                marginTop: "16px",
+                backgroundColor: "#e50914",
+                "&:hover": { backgroundColor: "#b00610" },
+                width: isMobile ? '100%' : 'auto'
+              }}
+            >
+              Fechar
+            </Button>
+          </>
+        );
+      default:
+        return null;
+    };
   }
   return (
     <Modal
@@ -454,7 +495,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 600,
+          width: isMobile ? '90%' : 600,
           bgcolor: "#181818",
           color: "white",
           boxShadow: 24,
@@ -493,6 +534,7 @@ const optionStyles = (isSelected: boolean) => ({
   backgroundColor: isSelected ? "#333333" : "#181818",
   color: "#ffffff",
   transition: "all 0.3s ease",
+  width: '100%',
   "&:hover": {
     backgroundColor: "#333333",
     borderColor: "#e50914",
