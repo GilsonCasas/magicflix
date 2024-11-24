@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/magicflix/static/js/main.9af40b1f.js",
-    "static/media/magicflix_no_bg.png": "/magicflix/static/media/magicflix_no_bg.3070ea5db3e08b835b4e.png",
-    "static/media/magicflix.png": "/magicflix/static/media/magicflix.01033531db1a1ca7e790.png",
-    "static/media/deboa.png": "/magicflix/static/media/deboa.403a1eb958c7409ebd37.png",
-    "static/media/M.png": "/magicflix/static/media/M.9d4235fdb6a2786f9008.png",
-    "static/media/comtedio.png": "/magicflix/static/media/comtedio.4699d53626ea8b3964ab.png",
-    "static/media/irritado.png": "/magicflix/static/media/irritado.b67e185219b43d480028.png",
-    "static/media/animado.png": "/magicflix/static/media/animado.39f62df18b54a3d80669.png",
-    "static/media/nabad.png": "/magicflix/static/media/nabad.bbe006a3a1c6d8a39be1.png",
-    "static/media/ansioso.png": "/magicflix/static/media/ansioso.4d1c69b7c0779bd56595.png",
-    "index.html": "/magicflix/index.html",
-    "main.9af40b1f.js.map": "/magicflix/static/js/main.9af40b1f.js.map"
+    "main.js": "/my-app/static/js/main.bbd895b2.js",
+    "static/media/magicflix_no_bg.png": "/my-app/static/media/magicflix_no_bg.3070ea5db3e08b835b4e.png",
+    "static/media/magicflix.png": "/my-app/static/media/magicflix.01033531db1a1ca7e790.png",
+    "static/media/deboa.png": "/my-app/static/media/deboa.403a1eb958c7409ebd37.png",
+    "static/media/M.png": "/my-app/static/media/M.9d4235fdb6a2786f9008.png",
+    "static/media/comtedio.png": "/my-app/static/media/comtedio.4699d53626ea8b3964ab.png",
+    "static/media/irritado.png": "/my-app/static/media/irritado.b67e185219b43d480028.png",
+    "static/media/animado.png": "/my-app/static/media/animado.39f62df18b54a3d80669.png",
+    "static/media/nabad.png": "/my-app/static/media/nabad.bbe006a3a1c6d8a39be1.png",
+    "static/media/ansioso.png": "/my-app/static/media/ansioso.4d1c69b7c0779bd56595.png",
+    "index.html": "/my-app/index.html",
+    "main.bbd895b2.js.map": "/my-app/static/js/main.bbd895b2.js.map"
   },
   "entrypoints": [
-    "static/js/main.9af40b1f.js"
+    "static/js/main.bbd895b2.js"
   ]
 }
