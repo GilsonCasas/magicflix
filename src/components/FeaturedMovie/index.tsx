@@ -52,7 +52,7 @@ const FeaturedMovie: React.FC<{ movieId: number }> = ({ movieId }) => {
           releaseDate: data.first_air_date.toString().split('-')[0],
           seasons,
           overview: data.overview,
-          genres: data.genres.map((genre: any) => genre.name).join(', '),
+          genres: data.genres.map((genre: { name: string }) => genre.name).join(', '),
         });
       });
   }, [movieId]);
@@ -88,5 +88,5 @@ const FeaturedMovie: React.FC<{ movieId: number }> = ({ movieId }) => {
     </Container>
   );
 };
-
+/* eslint-enable */
 export default FeaturedMovie;
