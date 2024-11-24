@@ -40,6 +40,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
 
   const resetAndClose = () => {
     setStep(1);
+    setTmdbRecommendations([]);
     setSelectedOptions({});
     onClose();
   };
