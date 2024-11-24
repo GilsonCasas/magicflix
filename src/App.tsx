@@ -7,7 +7,7 @@ import defaultTheme from './styles/theme';
 import GlobalStyles from './styles/global';
 
 const App: React.FC = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/magicflix">
     <ThemeProvider theme={defaultTheme}>
       <Routes />
       <GlobalStyles />
