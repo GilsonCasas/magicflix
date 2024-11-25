@@ -156,7 +156,7 @@ const MagicModal: React.FC<MagicModalProps> = ({ open, onClose }) => {
   
       const fetchRecommendationsFromTMDb = async (genre: string, tempo: Number ) => {
         const randomPage = Math.floor(Math.random() * 10) + 1;
-        const apiUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=${randomPage}&sort_by=popularity.desc&without_genres=${genre}&with_runtime.lte=${tempo}&with_watch_providers=8&watch_region=BR`;
+        const apiUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=${randomPage}&sort_by=popularity.desc&without_genres=${genre}&with_runtime.lte=${tempo}&with_watch_providers=8&watch_region=BR&certification.gte=12`;
   
         try {
           const response = await axios.get(apiUrl, {
